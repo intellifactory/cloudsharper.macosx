@@ -1,5 +1,6 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo "RUNNING CLOUDSHARPER AT DIR=$DIR"
+mono $DIR/CloudSharper.exe
+
 
 
