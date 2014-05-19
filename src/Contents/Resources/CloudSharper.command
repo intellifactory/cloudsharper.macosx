@@ -1,3 +1,5 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-open $DIR/../Resources/CloudSharper.command
+echo "RUNNING CLOUDSHARPER AT DIR=$DIR"
+
+
