@@ -5,8 +5,23 @@ VER=0.9.1
 ID=com.cloudsharper.local-service
 
 rm -rf build
+mkdir build
+
+# download binary package
+mkdir -p cache
+if [ ! -f cache/CloudSharper.zip ]; then
+  curl http://cloudsharper.com/downloads/CloudSharper.zip > cache/CloudSharper.zip
+fi
+
+# unzip original files
+if [ ! -d build/CloudSharper ]; then
+  unzip cache/CloudSharper.zip -d build/CloudSharper
+fi
+
+# build package
 mkdir -p build/root/$NAME.app
 cp -r src/* build/root/$NAME.app/
+cp -r build/CloudSharper/* build/root/$NAME.app/Contents/Resources/
 chmod a+x build/root/$NAME.app/Contents/MacOS/$NAME
 pkgbuild --analyze --root build/root build/$NAME.plist
 pkgbuild --root build/root --component-plist build/$NAME.plist --install-location /Applications \
