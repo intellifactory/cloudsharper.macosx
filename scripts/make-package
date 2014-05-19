@@ -1,8 +1,13 @@
 #!/bin/bash
 
-rm -rf root
-mkdir -p root/MyApp.app
-cp -r src/* root/MyApp.app/
-chmod a+x root/MyApp.app/Contents/MacOS/MyApp
-pkgbuild --analyze --root root MyApp.plist
-pkgbuild --root root --component-plist MyApp.plist --install-location /Applications --identifier com.myapp --version 0.1.1 MyApp.pkg
+NAME=CloudSharper
+VER=0.9.1
+ID=com.cloudsharper.local-service
+
+rm -rf build
+mkdir -p build/root/$NAME.app
+cp -r src/* build/root/$NAME.app/
+chmod a+x build/root/$NAME.app/Contents/MacOS/$NAME
+pkgbuild --analyze --root build/root build/$NAME.plist
+pkgbuild --root build/root --component-plist build/$NAME.plist --install-location /Applications \
+  --identifier $ID --version $VER build/$NAME.pkg

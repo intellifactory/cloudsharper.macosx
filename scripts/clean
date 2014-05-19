@@ -1,3 +1,4 @@
 #!/bin/bash
-rm -rf root *.pkg *.plist
+rm -rf build
+
 
