@@ -1,0 +1,3 @@
+#!/bin/bash
+installer -pkg build/CloudSharper.pkg -target /
+
