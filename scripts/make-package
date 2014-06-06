@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 NAME=CloudSharper
 ID=com.cloudsharper.local-service
