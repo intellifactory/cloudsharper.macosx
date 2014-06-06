@@ -26,3 +26,7 @@ chmod a+x build/root/$NAME.app/Contents/MacOS/$NAME
 pkgbuild --analyze --root build/root build/$NAME.plist
 pkgbuild --root build/root --component-plist build/$NAME.plist --install-location /Applications \
   --identifier $ID --version $VER build/$NAME.pkg
+
+# upload to azure
+npm install azure
+node upload.js build/$NAME.pkg

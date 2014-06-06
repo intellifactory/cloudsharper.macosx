@@ -1,2 +1,6 @@
 language: objective-c
-script: "./scripts/make-package"
+script: ./scripts/make-package
+env:
+  global:
+  - secure: cjqmUEZTt8JMqAXAc46cFwO5owQYZN6qaAiPMehvx+/b9hIaHwXy/j8XMTyDqGoDCLZ+1fKUmdpQJBqn6GSlOwpXMYGnvTZDOl/ugTtQR9Vw93BabI2VdSAxjxC60lwu8SK2ySTye2Dj85ahkOK8fnnprawivsPwyKmbGtygCv4=
+  - secure: TvfPS203uDEWIom4SL4vN3sRUpzcATY8RZRdtPO/RzimGygBI42JVK//UB4Vkf9KpR2gFJFxKMVE6EYGKDIcKo+JNHNgyxcwNTEfU+DE9eo/+C5sEix3O7490UdnJ/Ckip9O9DBpI87DTZIo7NxY6t5WtPoW0SVK4wK9frknuq8=
