@@ -18,7 +18,7 @@ if [ ! -d build/CloudSharper ]; then
 fi
 
 # find version
-VER=$(cat .build/CloudSharper/version.txt | tr -d '\r' | tr -d '\n')
+VER=$(cat build/CloudSharper/version.txt | tr -d '\r' | tr -d '\n')
 FILE="$NAME.$VER.pkg"
 
 # build package
