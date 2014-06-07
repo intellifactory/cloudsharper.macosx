@@ -32,4 +32,4 @@ pkgbuild --root build/root --component-plist build/$NAME.plist --install-locatio
 
 # upload to azure
 npm install azure
-node upload.js build/$FILE
+node scripts/upload.js build/$FILE
