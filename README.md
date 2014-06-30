@@ -24,3 +24,4 @@ To start, use Finder > Applications > CloudSharper.
 This starts the CloudSharper Local Service. Point your browser to the
 [CloudSharper](http://cloudsharper.com) website to start the IDE while the Local Service
 is running. 
+
