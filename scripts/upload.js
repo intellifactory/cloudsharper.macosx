@@ -4,7 +4,7 @@ var azure = require('azure');
 var blobService = azure.createBlobService();
 var blobName = fileName.match(/[^/]+$/)[0]
 console.log("uploading: " + fileName);
-blobService.createBlockBlobFromFile(containerName, blobName, fileName,
+blobService.createBlockBlobFromLocalFile(containerName, blobName, fileName,
 				    function (error) {
 					if (error) {
 					    console.log("error when uploading to azure")
