@@ -13,7 +13,7 @@ Binaries are to be found here:
 
 For example:
 
-https://cloudsharper.blob.core.windows.net/macosx/CloudSharper.0.9.22.1.pkg
+https://cloudsharper.blob.core.windows.net/macosx/CloudSharper.0.9.22.2.pkg
 
 ## Installation
 
