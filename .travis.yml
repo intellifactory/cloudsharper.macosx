@@ -1,9 +1,7 @@
 language: objective-c
-before_script:
-- openssl aes-256-cbc -K $encrypted_13794eafd496_key -iv $encrypted_13794eafd496_iv
-  -in scripts/cloudsharper.crt.encrypted -out scripts/cloudsharper.crt -d
 script: ./scripts/make-package
 env:
   global:
   - secure: cjqmUEZTt8JMqAXAc46cFwO5owQYZN6qaAiPMehvx+/b9hIaHwXy/j8XMTyDqGoDCLZ+1fKUmdpQJBqn6GSlOwpXMYGnvTZDOl/ugTtQR9Vw93BabI2VdSAxjxC60lwu8SK2ySTye2Dj85ahkOK8fnnprawivsPwyKmbGtygCv4=
   - secure: TvfPS203uDEWIom4SL4vN3sRUpzcATY8RZRdtPO/RzimGygBI42JVK//UB4Vkf9KpR2gFJFxKMVE6EYGKDIcKo+JNHNgyxcwNTEfU+DE9eo/+C5sEix3O7490UdnJ/Ckip9O9DBpI87DTZIo7NxY6t5WtPoW0SVK4wK9frknuq8=
+  - secure: OUkx/p+JjN6V4mPViT+vmipc6LNXhymNM0eaSOxVmhlQR1DtYu7tJmZYVBVLbx5/zZYj/cfqDiIIT6+wTD8IKMt/jjC3R6jCVI30OG7Jirz7a4tG+LY1291YTw2BsCZ0Q1WKdHSmwg6cWv23JcRuE2SKX49UcWs+Mbw5Kff+KQo=
