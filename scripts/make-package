@@ -23,9 +23,9 @@ FILE="$NAME.$VER.pkg"
 
 # prepare package signing
 openssl aes-256-cbc -k "$CRT_PASSWORD" -in scripts/cloudsharper.crt.encrypted -out scripts/cloudsharper.crt -d
-security create-keychain osx-build.keychain
+security create-keychain -p "$CRT_PASSWORD" osx-build.keychain
 security default-keychain -s osx-build.keychain
-security unlock-keychain osx-build.keychain
+security unlock-keychain -p "$CRT_PASSWORD" osx-build.keychain
 security set-keychain-settings osx-build.keychain
 security import scripts/cloudsharper.crt -k ~/Library/Keychains/osx-build.keychain
 
