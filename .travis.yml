@@ -1,4 +1,7 @@
 language: objective-c
+before_script:
+- openssl aes-256-cbc -K $encrypted_13794eafd496_key -iv $encrypted_13794eafd496_iv
+  -in scripts/cloudsharper.crt.encrypted -out scripts/cloudsharper.crt -d
 script: ./scripts/make-package
 env:
   global:
