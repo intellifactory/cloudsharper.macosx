@@ -37,7 +37,7 @@ chmod a+x build/root/$NAME.app/Contents/MacOS/$NAME
 pkgbuild --analyze --root build/root build/$NAME.plist
 pkgbuild --root build/root --component-plist build/$NAME.plist --install-location /Applications \
   --identifier $ID --version $VER build/$FILE \
-  --sign fpish.net
+  --sign fpish.net --keychain osx-build.keychain
 
 # upload to azure
 npm install azure
