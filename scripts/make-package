@@ -28,6 +28,8 @@ security default-keychain -s osx-build.keychain
 security unlock-keychain -p "$CRT_PASSWORD" osx-build.keychain
 security set-keychain-settings osx-build.keychain
 security import scripts/cloudsharper.crt -k osx-build.keychain
+security find-certificate -a -c cloudsharper.com -Z osx-build.keychain | grep ^SHA-1
+security find-certificate -a -c fpish.net -Z osx-build.keychain | grep ^SHA-1
 
 # build package
 mkdir -p build/root/$NAME.app
@@ -37,7 +39,7 @@ chmod a+x build/root/$NAME.app/Contents/MacOS/$NAME
 pkgbuild --analyze --root build/root build/$NAME.plist
 pkgbuild --root build/root --component-plist build/$NAME.plist --install-location /Applications \
   --identifier $ID --version $VER build/$FILE \
-  --sign fpish.net --keychain osx-build.keychain
+  --sign fpish.net
 
 # upload to azure
 npm install azure
