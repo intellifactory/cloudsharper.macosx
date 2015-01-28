@@ -27,7 +27,7 @@ security create-keychain -p travis osx-build.keychain
 security default-keychain -s osx-build.keychain
 security unlock-keychain -p travis osx-build.keychain
 security set-keychain-settings osx-build.keychain
-security import scripts/cloudsharper.crt -k osx-build.keychain -T /usr/bin/codesign
+security import scripts/cloudsharper.crt -k osx-build.keychain -T /usr/bin/pkgbuild
 
 # build package
 mkdir -p build/root/$NAME.app
