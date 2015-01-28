@@ -21,13 +21,13 @@ fi
 VER=$(cat build/CloudSharper/version.txt | tr -d '\r' | tr -d '\n')
 FILE="$NAME.$VER.pkg"
 
-# prepare package signing
-openssl aes-256-cbc -k "$CRT_PASSWORD" -in scripts/cloudsharper.crt.encrypted -out scripts/cloudsharper.crt -d
-security create-keychain -p travis osx-build.keychain
-security default-keychain -s osx-build.keychain
-security unlock-keychain -p travis osx-build.keychain
-security set-keychain-settings osx-build.keychain
-security import scripts/cloudsharper.crt -k osx-build.keychain -T /usr/bin/pkgbuild
+# # prepare package signing
+# openssl aes-256-cbc -k "$CRT_PASSWORD" -in scripts/cloudsharper.crt.encrypted -out scripts/cloudsharper.crt -d
+# security create-keychain -p travis osx-build.keychain
+# security default-keychain -s osx-build.keychain
+# security unlock-keychain -p travis osx-build.keychain
+# security set-keychain-settings osx-build.keychain
+# security import scripts/cloudsharper.crt -k osx-build.keychain -T /usr/bin/pkgbuild
 
 # build package
 mkdir -p build/root/$NAME.app
@@ -37,7 +37,7 @@ chmod a+x build/root/$NAME.app/Contents/MacOS/$NAME
 pkgbuild --analyze --root build/root build/$NAME.plist
 pkgbuild --root build/root --component-plist build/$NAME.plist --install-location /Applications \
   --identifier $ID --version $VER build/$FILE \
-  --sign fpish.net --keychain osx-build.keychain
+  # --sign fpish.net --keychain osx-build.keychain
 
 # upload to azure
 npm install azure
